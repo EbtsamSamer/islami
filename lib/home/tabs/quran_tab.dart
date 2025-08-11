@@ -5,7 +5,7 @@ import 'package:islami_app/models/horizental_sura_item.dart';
 import 'package:islami_app/models/sura_item.dart';
 
 class QuranTab extends StatelessWidget {
-  QuranTab({super.key});
+  QuranTab({super.key,                  });
 
   List<String> arabicQuranSuras = [
     "الفاتحه",
