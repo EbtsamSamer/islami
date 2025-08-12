@@ -19,58 +19,57 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/images/quran_bg.png"),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
+    return Scaffold(
+      backgroundColor: Colors.transparent,
 
-          showSelectedLabels: true,
-          showUnselectedLabels: false,
-          backgroundColor: Color(0xFFE2BE7F),
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.black,
-          selectedLabelStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 12,
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
+        backgroundColor: Color(0xFFE2BE7F),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.black,
+        selectedLabelStyle: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 12,
+        ),
+        currentIndex: currentIndex,
+        onTap: (value) {
+          currentIndex = value;
+          setState(() {});
+        },
+
+        items: [
+          BottomNavigationBarItem(
+            icon: _buildImage("ic_quran", 0),
+            label: "Quran",
           ),
-          currentIndex: currentIndex,
-          onTap: (value) {
-            currentIndex = value;
-            setState(() {});
-          },
-
-          items: [
-            BottomNavigationBarItem(
-              icon: _buildImage("ic_quran", 0),
-              label: "Quran",
-            ),
-            BottomNavigationBarItem(
-              icon: _buildImage("ic_ahadeth", 1),
-              label: "Hadeth",
-            ),
-            BottomNavigationBarItem(
-              icon: _buildImage("ic_sepha", 2),
-              label: "Sepha",
-            ),
-            BottomNavigationBarItem(
-              icon: _buildImage("ic_radio", 3),
-              label: "Radio",
-            ),
-            BottomNavigationBarItem(
-              icon: _buildImage("ic_time", 4),
-              label: "Date",
-            ),
-          ],
-        ),
-body: tabs[currentIndex],
+          BottomNavigationBarItem(
+            icon: _buildImage("ic_ahadeth", 1),
+            label: "Hadeth",
+          ),
+          BottomNavigationBarItem(
+            icon: _buildImage("ic_sepha", 2),
+            label: "Sepha",
+          ),
+          BottomNavigationBarItem(
+            icon: _buildImage("ic_radio", 3),
+            label: "Radio",
+          ),
+          BottomNavigationBarItem(
+            icon: _buildImage("ic_time", 4),
+            label: "Date",
+          ),
+        ],
       ),
+         body: Column(
+         children: [
+     SizedBox(height: 20,),
+        Image.asset("assets/images/header.png",width: 290,height: 150,),
+        Expanded(child: tabs[currentIndex]),
+      ],
+    ),
     );
   }
 

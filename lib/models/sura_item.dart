@@ -14,16 +14,19 @@ class SuraItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Stack(
-       alignment: Alignment.center,
-         children: [
-           Image.asset("assets/images/index_ic.png",height: 54,width: 54,),
-           Text("$index",style: GoogleFonts.inter(
-             fontSize: 20,
-             fontWeight: FontWeight.bold,
-             color: Colors.white,
-           ),),
-         ],
+        Container(
+          margin: EdgeInsets.only(left: 20),
+          child: Stack(
+                 alignment: Alignment.center,
+           children: [
+             Image.asset("assets/images/index_ic.png",height: 54,width: 54,),
+             Text("$index",style: GoogleFonts.inter(
+               fontSize: 20,
+               fontWeight: FontWeight.bold,
+               color: Colors.white,
+             ),),
+           ],
+          ),
         ),
         SizedBox(width: 24,),
         Expanded(
@@ -45,11 +48,14 @@ class SuraItem extends StatelessWidget {
         ),
 
 
-        Text(nameAr,style: GoogleFonts.inter(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),),
+        Container(
+          margin: EdgeInsets.only(right: 20),
+          child: Text(nameAr,style: GoogleFonts.inter(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),),
+        ),
       ],
     );
   }
