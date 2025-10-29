@@ -93,6 +93,6 @@ class _HomeScreenState extends State<HomeScreen> {
     HadethTab(),
     SebhaTab(),
     RadioTab(),
-    DatesTab()
+    DatesTab(dailyTimes: [],)
   ];
 }

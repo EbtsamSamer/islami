@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami_app/home/home.dart';
 
 class OnboardingScreen extends StatelessWidget {
-  static const String routeName = "/";
+  static const String routeName = "OnboardingScreen";
 
   const OnboardingScreen({super.key});
 
